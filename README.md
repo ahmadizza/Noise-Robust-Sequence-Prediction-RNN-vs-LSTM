@@ -62,9 +62,9 @@ Uses the **first `INPUT_LEN` outputs**:
 output = self.fc(rnn_out[:, :INPUT_LEN, :])
 ```
 
-✔ Tests **short-term dependency**
-✔ Model predicts immediately after reading INPUT
-✔ Task is easy because target is close to input
+* Tests **short-term dependency**
+* Model predicts immediately after reading INPUT
+* Task is easy because target is close to input
 
 **Analogy:**
 See 10 digits → directly write down the same 10 digits.
@@ -79,9 +79,9 @@ Uses the **last `INPUT_LEN` outputs**:
 output = self.fc(rnn_out[:, -INPUT_LEN:, :])
 ```
 
-✔ Tests **long-term dependency**
-✔ Model must remember INPUT after reading 20 blank tokens
-✔ Much harder than the Standard model
+* Tests **long-term dependency**
+* Model must remember INPUT after reading 20 blank tokens
+* Much harder than the Standard model
 
 **Analogy:**
 See 10 digits → read 20 irrelevant tokens → THEN write down the original digits.
@@ -132,7 +132,7 @@ Both RNN and LSTM:
 * Have diminishing gradients as the task converges
 * Easily memorize short dependencies
 
-✔ **Both models succeed completely**
+**Both models succeed completely**
 
 ---
 
@@ -140,18 +140,18 @@ Both RNN and LSTM:
 
 #### **RNN Results**
 
-✘ Fails to learn
-✘ Predictions collapse to a repeating digit (e.g., `[3,3,3,...]`)
-✘ Accuracy: **0–30%**
-✘ Loss stagnates at ~2.3
-✘ Suffers from **vanishing gradients**
+* Fails to learn
+* Predictions collapse to a repeating digit (e.g., `[3,3,3,...]`)
+* Accuracy: **0–30%**
+* Loss stagnates at ~2.3
+* Suffers from **vanishing gradients**
 
 #### **LSTM Results**
 
-✔ Successfully learns long-term dependencies
-✔ Accuracy: **80–100%**
-✔ Loss decreases consistently
-✔ Gradient magnitudes remain healthy
+* Successfully learns long-term dependencies
+* Accuracy: **80–100%**
+* Loss decreases consistently
+* Gradient magnitudes remain healthy
 
 ---
 
@@ -214,7 +214,7 @@ Thus, **LSTM is the preferred choice** when the model must ignore noise and reca
 
 ---
 
-## **📚 Keywords**
+## **Keywords**
 
 `RNN`, `LSTM`, `sequence modeling`, `noise robustness`,
 `long-term dependency`, `gradient vanishing`, `gradient clipping`
